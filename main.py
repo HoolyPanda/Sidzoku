@@ -4,7 +4,7 @@ import assets.View.MainView as mainView
 import threading
 import json
 
-token = open('./token.cred').readline().replace('\n', '')
+token = open('./assets/token.cred').readline().replace('\n', '')
 
 
 views = []
@@ -14,11 +14,11 @@ apiViews = []
 apiIDs = []
 
 def parseStuff(userId, event):
-    print(json.dumps(event.raw['object']))
-    if event.raw['object']['peer_id'] != 2000000001:
+    print(json.dumps(event['object']))
+    if event['object']['from_id'] >= 0:
         for view in views:
             if view.vkID == userId:
-                if view.ParseEvent(event) == True:
+                if view.ParseEvent(event['object']) == True:
                     views.remove(view)
                     userIds.remove(view.vkID)
                 break    
@@ -44,8 +44,7 @@ def main():
                     userIds.append(view.vkID)
             rawEvent = event.raw
             userId = rawEvent['object']['from_id']
-            #
-            if event.raw['object']['peer_id'] != 2000000001:
+            if event.raw['object']['from_id'] >= 0:
                 mV = mainView.MainView(session= session, userId= userId, event= rawEvent)
                 if mV.vkID not in userIds:
                     views.append(mV)

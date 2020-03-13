@@ -2,12 +2,14 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+../token.cred
 # C extensions
 *.so
+*.json
 
 # Distribution / packaging
 .Python
+*.cred
 build/
 develop-eggs/
 dist/
