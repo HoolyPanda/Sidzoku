@@ -1,9 +1,6 @@
 import os
 import json
 
-# TODO: transactions history button
-# TODO: evidences Button
-
 def GetTransactionsHistory(id: int):
     path = '../AnthillPay/DB/'
 
@@ -36,7 +33,7 @@ def GetEvidences(id: int):
             if c['id'] == id:
                 payload = ''
                 for evidence in c['evidences']:
-                    payload += f'Найдена улика\n'
+                    payload += f'\nНайдена улика\n'
                     for k in evidence.keys():
                         line = f'===>{translation[k]}{evidence[k]}\n'
                         payload += line
@@ -63,5 +60,4 @@ def LoadCitizen(id: int):
                     line = f'{translation[k]}{c[k]}'
                     payload += f'{line}\n'
                 return payload
-
                 
