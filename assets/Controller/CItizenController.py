@@ -23,7 +23,7 @@ def GetEvidences(id: int):
         'name': 'Имя: ',
         'work': 'Место работы: ',
         'district': 'Родился в: ',
-        'eyeColor': 'Глаза: ',
+        'eyes': 'Глаза: ',
         'hairColor': 'Цвет волос: ',
         'height': 'Рост: ',
         'money': 'Денег на счету: '
