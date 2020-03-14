@@ -26,7 +26,8 @@ def GetEvidences(id: int):
         'eyes': 'Глаза: ',
         'hair': 'Цвет волос: ',
         'height': 'Рост: ',
-        'money': 'Денег на счету: '
+        'money': 'Денег на счету: ',
+        'id': 'Личный код: '
     } 
 
     for f in os.listdir(path):
