@@ -49,7 +49,8 @@ def LoadCitizen(id: int):
         'eyeColor': 'Глаза: ',
         'hairColor': 'Цвет волос: ',
         'height': 'Рост: ',
-        'money': 'Денег на счету: '
+        'money': 'Денег на счету: ',
+        "id": 'Личный номер: '
     }    
     for f in os.listdir(path):
         if not os.path.isdir(f'{path}{f}'):
