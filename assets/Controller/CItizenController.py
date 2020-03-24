@@ -32,11 +32,14 @@ def GetEvidences(id: int):
             c = json.loads(open(f'{path}{f}', 'r').read())
             if c['id'] == id:
                 payload = ''
-                for evidence in c['evidences']:
-                    payload += f'\nНайдена улика\n'
-                    for k in evidence.keys():
-                        line = f'===>{translation[k]}{evidence[k]}\n'
-                        payload += line
+                if len(c['evidences']) > 0:    
+                    for evidence in c['evidences']:
+                        payload += f'\nНайдена улика\n'
+                        for k in evidence.keys():
+                            line = f'===>{translation[k]}{evidence[k]}\n'
+                            payload += line
+                else:
+                    payload = "Улик не обнаружено"
                 return payload
 
 def LoadCitizen(id: int):
